@@ -1,0 +1,9 @@
+{
+	"name": "patilrameshadf",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1553b8f6-db57-416c-b2b1-6bc7cb9232c6",
+		"tenantId": "3de8d9c8-f20e-482d-97df-2c39985b4394"
+	}
+}

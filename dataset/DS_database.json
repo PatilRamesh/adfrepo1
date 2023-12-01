@@ -1,0 +1,35 @@
+{
+	"name": "DS_database",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_server",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "empno",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "empname",
+				"type": "varchar"
+			},
+			{
+				"name": "dept",
+				"type": "varchar"
+			},
+			{
+				"name": "place",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "emp1"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

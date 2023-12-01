@@ -1,0 +1,37 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Filteracty",
+				"type": "Filter",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.lofs",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@contains(item(),'ram')",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"lofs": {
+				"type": "array",
+				"defaultValue": [
+					"ramesh",
+					"pavani",
+					"bhaskar",
+					"annapurna"
+				]
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-11-28T16:15:00Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
