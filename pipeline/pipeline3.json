@@ -1,0 +1,29 @@
+{
+	"name": "pipeline3",
+	"properties": {
+		"activities": [
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod2-00.centralindia.logic.azure.com:443/workflows/d0ec3c6b5432467eb52f4894e42bbe12/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=6mycKz4TzdjETt-sG2zvaqhe-SBz9Wkj7zd9k2twByY",
+					"method": "POST",
+					"body": {
+						"value": "@concat(\n        '{  \"To\":\"prreddy689@gmail.com\",\n            \"Subject\":\"Data migration Successful1\",\n            \"Body\":\"\n                        <body>\n\t<p>Dear Team,</p>\n\t<p>Pipeline got succeeded.</p>\n           <ul>\t\t\t\n\t <li>ADF Name : ',pipeline().DataFactory,' </li>',\n                   '<li>Pipeline : ', pipeline().Pipeline, '</li>',\n                  ' <li>Status   : Successful </li>',\n\t '<li>Runid    : ',pipeline().RunId, '</li>',\n\t '<li>DataTime : ', utcnow(),   '</li>\n         </ul>                \n                  <p>data migration successful.</p>\n                  <br>\n \t<p>Thanks and regards,</p>\n  \t<p>Data migration team</p>\"\n  }'\n)",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"annotations": []
+	}
+}
